@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameLogic {
+
+    //    Button
     private JButton btn_upperLeft;
     private JButton btn_upperMiddle;
     private JButton btn_upperRight;
@@ -14,6 +16,7 @@ public class GameLogic {
     private JButton btn_middleCenter;
     private JButton btn_middleRight;
 
+    //    ButtonListener
     private ButtonListener upperLeft;
     private ButtonListener upperMiddle;
     private ButtonListener upperRight;
@@ -25,7 +28,6 @@ public class GameLogic {
     private ButtonListener middleRight;
 
     private JPanel boardpanel;
-    private JPanel settingspanel;
     private JPanel mainpanel;
     private JButton []button = new JButton[]{btn_upperLeft, btn_upperMiddle, btn_upperRight, btn_lowerLeft, btn_lowerMiddle, btn_lowerRight, btn_middleLeft, btn_middleCenter, btn_middleRight};
     private String startgame = "X";
@@ -91,21 +93,6 @@ public class GameLogic {
             });
         }
     }
-
-//
-
-//    //        Button Maker
-//    static JButton makeButton(JPanel dis, String str, int x1, int y1, int x2, int y2, ActionListener a){
-//        JButton but = new JButton(str);
-//        but.setBounds(x1, y1, x2, y2);
-//        but.setContentAreaFilled(false);
-//        but.setForeground(Color.WHITE);
-//        but.setFont(new Font("Italics", Font.BOLD, 70));
-//        but.addActionListener(a);
-//        but.setFocusable(false);
-//        return but;
-//    }
-
     private void lockBoard(){
         for (int i =0; i<9 ;i++){
             boardpanel.getComponent(i).setEnabled(false);
@@ -115,6 +102,7 @@ public class GameLogic {
         for (int i =0; i<9 ;i++){
             boardpanel.getComponent(i).setEnabled(true);
         }
+
         //reset
         button[0].setText("");
         button[1].setText("");
